@@ -60,6 +60,6 @@
 |                           | SQL    | [Programmers](https://school.programmers.co.kr/) | [SUM, MAX, MIN](https://school.programmers.co.kr/learn/courses/30/parts/17043), [GROUP BY](https://school.programmers.co.kr/learn/courses/30/parts/17044) |          |               |             |
 | 3주차<br/>(220819-220825) | Python |                                                  |                                                              |          |               |             |
 |                           | SQL    | [Programmers](https://school.programmers.co.kr/) | [IS NULL](https://school.programmers.co.kr/learn/courses/30/parts/17045), [JOIN](https://school.programmers.co.kr/learn/courses/30/parts/17046), [String, Date](https://school.programmers.co.kr/learn/courses/30/parts/17047) |          |               |             |
-|                           |        |                                                  |                                                              |          |               |             |
-|                           |        |                                                  |                                                              |          |               |             |
+| 4주차<br/>(220826-220901) | Python |                                                  |                                                              |          |               |             |
+|                           | SQL    |                                                  |                                                              |          |               |             |
 
