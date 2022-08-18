@@ -1,4 +1,4 @@
-# KDT Algorithm Study 2022
+# 2022 KDT Algorithm Study
 
 
 
