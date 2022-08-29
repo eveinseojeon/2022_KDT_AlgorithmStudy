@@ -1,0 +1,4 @@
+for T in range(int(input())):
+    N,M=list(map(int,input().split()))
+    all_num=list(map(int,input().split()))
+    print(f'#{T+1} {all_num[M%N]}')

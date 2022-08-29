@@ -1,0 +1,24 @@
+for T in range(int(input())):
+    V,E=list(map(int,input().split()))#노드수 받기 
+    all_map = [[0]*V for _ in range(V)]#노드 맵 만들기
+    for _ in range(E):# 노드 받아서 1로 채워주기 
+        x,y=list(map(int,input().split()))
+        all_map[x-1][y-1]=1
+        all_map[y-1][x-1]=1
+    s_x,s_y=list(map(int,input().split()))# 출발지와 목적지 받기
+    now=[s_x-1] # 현재위치
+    n_N=-1# 카운트
+    while now :
+        n_N+=1#1씩 올려준다
+        if s_y-1 in now: #도착지가 큐안에 있으면 
+            print(f'#{T+1} {n_N}')
+            break
+        z_l=[] #리스트 
+        for w in now: #x위치
+            for n_y in range(V):#y위치
+                if all_map[w][n_y]==1: # 갈수있는 길일경우에
+                    all_map[w][n_y]=0
+                    z_l.append(n_y)
+        now=z_l
+    if s_y-1 not in now: #도착지가 now안에 없을때 실행
+        print(f'#{T+1} {0}')

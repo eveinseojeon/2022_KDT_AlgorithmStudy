@@ -1,0 +1,37 @@
+for T in range(int(input())):
+    map_ran=int(input())#맵 길이 받아주기
+    all_map = [list(input()) for _ in range(map_ran)]# 맵만들기
+    qu=[]
+    for x in range(map_ran):#시작위치 찾아주기
+        for y in range(map_ran):
+            if all_map[x][y]=='3':
+                qu.append((x,y))
+    joystick=[(1,0),(0,1),(-1,0),(0,-1)]   
+
+    def find_map(que):# 맵찾기 정의
+        global joystick,all_map,map_ran
+        q=que
+        z=[]
+        while q:
+            x,y=q.pop()
+            all_map[x][y]=6
+            for x_l,y_l in joystick:
+                x_P=x+x_l
+                y_P=y+y_l
+                if 0 <= x_P < map_ran and 0 <= y_P < map_ran:
+                    if all_map[x_P][y_P]=='0':
+                        z.append((x_P,y_P))
+                    elif all_map[x_P][y_P]=='2':
+                        return 4231
+        return z
+
+    count_=-1
+    while qu:
+        count_+=1#카운트
+        qu=find_map(qu) 
+        if qu==4231:#4231일때 도착가능함
+            break
+    if qu==4231:# 도착가능할때
+   		 print(f'#{T+1} {count_}')
+    else:#도착하지못하면
+        print(f'#{T+1} {0}')
