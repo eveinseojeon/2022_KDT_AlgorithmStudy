@@ -1,6 +1,20 @@
 ## Weather Observation Station 5
 
-??
+SELECT CITY, LENGTH(CITY)
+
+FROM STATION
+
+ORDER BY LENGTH(CITY) ASC, CITY ASC
+
+LIMIT 1;
+
+SELECT CITY, LENGTH(CITY)
+
+FROM STATION
+
+ORDER BY LENGTH(CITY) DESC, CITY ASC
+
+LIMIT 1;
 
 ---
 
@@ -76,7 +90,9 @@ FROM TRIANGLES;
 
 ## The Blunder
 
-??
+SELECT CEIL(AVG(salary) - AVG(REPLACE(salary, '0', '')))
+
+FROM EMPLOYEES;
 
 ---
 
@@ -96,9 +112,11 @@ LIMIT 1;
 
 ## Average Population of Each Continent
 
-ROUND()
+ROUND() - 반올림
 
-FLOOR()
+FLOOR() - 내림
+
+CEIL() - 올림
 
 ---
 
