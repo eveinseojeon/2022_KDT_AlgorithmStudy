@@ -65,7 +65,7 @@
 | 5주차 | 22.09.05(월)     | Python |                                                    |                                                              |              |               | 박광열      |
 |       | 22.09.08(목)     | SQL    | [HackerRank](https://www.hackerrank.com/dashboard) | [Medium](https://www.hackerrank.com/domains/sql?filters%5Bdifficulty%5D%5B%5D=medium) 10문제 | Medium       |               |             |
 | 6주차 | 22.09.12(월)     | Python |                                                    |                                                              |              |               | 전인서      |
-|       | 22.09.15(목)     | SQL    | [HackerRank](https://www.hackerrank.com/dashboard) | [Medium](https://www.hackerrank.com/domains/sql?filters%5Bdifficulty%5D%5B%5D=medium) 8문제, [Hard](https://www.hackerrank.com/domains/sql?filters%5Bdifficulty%5D%5B%5D=hard) 2문제 | Medium, Hard |               |             |
+|       | 22.09.15(목)     | SQL    | [HackerRank](https://www.hackerrank.com/dashboard) | [Medium](https://www.hackerrank.com/domains/sql?filters%5Bdifficulty%5D%5B%5D=medium) 6문제, [Hard](https://www.hackerrank.com/domains/sql?filters%5Bdifficulty%5D%5B%5D=hard) 2문제 | Medium, Hard |               |             |
 | 7주차 | 22.09.19(월)     | Python |                                                    |                                                              |              |               | 조숙현      |
 |       | 22.09.22(목)     | SQL    |                                                    |                                                              |              |               |             |
 
