@@ -1,0 +1,13 @@
+해커랭크 sql - easy
+
+1. type of triangle : 조건을 잘 설정하는 것이 중요함, case when ~then ~ 절로 사용
+2. the blunder : 대체하는 것 떠올리지 못했음 지운다고만 생각해서 중간껄 어떻게 지우나 고민했음 - 대체: replace(칼럼, 조건, 대체대상)
+3. Weather Observation Station15 : 서브쿼리 작성하는 것 조심
+4. Top Earners : 서브쿼리 작성이 어려웠음 / 서브쿼리 굳이 하지 않고 group by, order by 통해서 earnings 카운트하고 줄세워서 구하면 됨 
+5. Popualation Census : 이너조인만 하면 어려운 것 없음
+6. Draw The Triangle 1 , 2 
+ : @Set 활용하기, 대입연산자 ‘:=’ 그리고 repeat를 처음 알았음. 
++ ( INFORMATION_SCHEMA란 MySQL 서버 내에 존재하는 DB의 메타 정보(테이블, 칼럼, 인덱스 등의 스키마 정보)를 모아둔 DB다. 
+INFORMATION_SCHEMA 데이터베이스 내의 모든 테이블은 읽기 전용이며, 단순히 조회만 가능하다. 
+즉, 읽기전용(Read-only)으로 사용자가 직접 수정하거나 관여할 수는 없다. )
++ 2는 반대로 0부터 더해가면서 풀어내면 됨
