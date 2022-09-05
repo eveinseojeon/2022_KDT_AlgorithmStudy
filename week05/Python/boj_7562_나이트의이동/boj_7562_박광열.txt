@@ -1,0 +1,22 @@
+for dd in range(int(input())):
+    ml=int(input())
+    a_map=[[0]*ml for _ in range(ml)]
+    start=list(map(int,input().split()))
+    end=list(map(int,input().split()))
+    joystick=[(2,1),(2,-1),(-2,1),(-2,-1),(1,2),(1,-2),(-1,2),(-1,-2)]
+    now=0
+    qu=[start]
+    while qu :
+        if end in qu:
+            print(now)
+            break
+        ll=[]
+        now+=1
+        for i in range(len(qu)):
+            x,y=qu.pop()
+            for xi,yi in joystick:
+                if ml > x+xi >=0 and ml > y+yi >=0:
+                    if a_map[x+xi][y+yi]==0:
+                        a_map[x+xi][y+yi]=1
+                        ll.append([x+xi,y+yi])
+        qu=ll

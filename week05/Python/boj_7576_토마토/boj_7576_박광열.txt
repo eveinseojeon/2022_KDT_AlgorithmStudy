@@ -1,0 +1,32 @@
+m, n = map(int, input().split())
+a_map = [list(map(int, input().split())) for _ in range(n)]
+qu=[]
+joystick=[(1,0),(0,1),(-1,0),(0,-1)]
+for i in range(n):
+    for z in range(m):
+        if a_map[i][z]==1:
+            qu.append([i,z])
+while True:
+    nlist=[]
+    for x,y in qu:
+        for xi,yi in joystick:
+            if n>x+xi>=0 and m>y+yi>=0 and a_map[x+xi][y+yi]==0 and [x+xi,y+yi] not in  nlist and [x+xi,y+yi] not in qu:
+                nlist.append([x+xi,y+yi])
+    if nlist==[]:
+        break
+    qu+=nlist
+    xn,yn=qu[0]
+    a_map[xn][yn]+=1 
+maaxx=1
+mmin=1
+for xn,yn in qu:
+    a_map[xn][yn]+=1 
+for x in range(n):
+    if maaxx<max(a_map[x]):
+        maaxx=max(a_map[x])
+    if 0 in a_map[x]:
+        print(-1)
+        mmin=0
+if mmin!= 0:
+    print(maaxx-2)
+    
