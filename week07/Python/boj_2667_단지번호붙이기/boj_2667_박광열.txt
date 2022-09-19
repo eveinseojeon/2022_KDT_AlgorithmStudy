@@ -1,0 +1,36 @@
+from collections import deque
+map_a=[]
+n=int(input())
+dx,dy = [-1,1,0,0],[0,0,1,-1]
+queue = deque([])
+st=2
+
+for j in range(n):
+    map_a.append(list(map(int,list(input()))))
+    
+
+def bfs():
+    global st
+    while queue:
+        x, y= queue.popleft()
+        map_a[x][y] = st
+        for i in range(4):
+            nx, ny= dx[i] + x, dy[i] + y
+            if 0 <= nx < n and 0 <= ny < n and map_a[nx][ny] == 1:
+                map_a[nx][ny] = st
+                queue.append([nx,ny])
+
+for i in range(n):
+    for j in range(n):
+        if map_a[i][j]==1:
+            queue.append([i,j])
+            bfs()
+            st+=1
+z=[0]*st
+for i in map_a:
+    for j in range(2,st):
+        z[j]+=i.count(j)
+print(st-2)
+z.sort()
+for i in range(2,st):
+    print(z[i])

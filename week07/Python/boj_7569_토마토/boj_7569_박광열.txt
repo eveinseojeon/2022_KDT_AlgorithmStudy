@@ -1,0 +1,40 @@
+# 토마토
+from collections import deque
+
+m, n ,h= map(int, input().split())
+map_=[]
+queue = deque([])
+dx = [-1,1,0,0,0,0]
+dy = [0,0,1,-1,0,0]
+dz = [0,0,0,0,1,-1]
+res = 0
+for i in range(h):
+    s_map = []
+    for j in range(n):
+        s_map.append(list(map(int,input().split())))
+    map_.append(s_map)
+    
+for t in range(h):        
+    for i in range(n):
+        for j in range(m):
+            if map_[t][i][j] == 1:
+                queue.append([t,i,j])
+
+def bfs():
+    while queue:
+        x, y ,z= queue.popleft()
+        for i in range(6):
+            nx, ny ,nz= dx[i] + x, dy[i] + y, dz[i] + z
+            if 0 <= nx < h and 0 <= ny < n and 0 <= nz < m and map_[nx][ny][nz] == 0:
+                map_[nx][ny][nz] = map_[x][y][z] + 1
+                queue.append([nx,ny,nz])
+
+bfs()
+for t in map_:
+    for i in t:
+        for j in i:
+            if j == 0:
+                print(-1)
+                exit()
+        res = max(res, max(i))
+print(res-1)
