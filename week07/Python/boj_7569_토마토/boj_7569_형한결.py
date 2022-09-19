@@ -4,7 +4,7 @@ M,N,H = map(int,input().split())
 # 이미 모든 토마토 익어있으면 0, 모두 익지 못하는 상황 -1
 
 
-graph =[[list(map(int(input().split()))) for _ in range(N)] for _ in range(H)]
+graph =[[list(map(int,input().split())) for _ in range(N)] for _ in range(H)]
 
 
 dbatch = (0,0,0,0,-1,1)

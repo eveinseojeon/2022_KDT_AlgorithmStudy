@@ -17,9 +17,9 @@ def bfs(graph:list)-> str:
     discovered = [[0,0]]
     while que:
         c_loc = que.popleft()
-        tile = graph[c_loc[0]][c_loc[1]]
-        d_row = (0,tile)
-        d_col = (tile,0)
+        tile = graph[c_loc[0]][c_loc[1]] 
+        d_row = (0,tile) # dx = [0,0,-1,1]
+        d_col = (tile,0) 
         for i in range(len(d_row)):
             s_loc = [c_loc[0] + d_row[i],c_loc[1] + d_col[i]]
             if s_loc[0] >= 0 and s_loc[1] >=0 and s_loc[1] < n and s_loc[0] <n:
