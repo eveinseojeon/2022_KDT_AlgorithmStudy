@@ -67,9 +67,9 @@
 | 6주차 | ~~22.09.12(월)~~ | ~~Python~~ |                                                    |                                                              |                 |               |             |
 |       | 22.09.15(목)     | SQL        | [HackerRank](https://www.hackerrank.com/dashboard) | [Medium](https://www.hackerrank.com/domains/sql?filters%5Bdifficulty%5D%5B%5D=medium) 6문제, [Hard](https://www.hackerrank.com/domains/sql?filters%5Bdifficulty%5D%5B%5D=hard) 2문제 | Medium, Hard    |               |             |
 | 7주차 | 22.09.19(월)     | Python     | [BOJ](https://www.acmicpc.net/)                    | [토마토(7569)](https://www.acmicpc.net/problem/7569), [단지번호붙이기(2667)](https://www.acmicpc.net/problem/2667), [미로 탐색(2178)](https://www.acmicpc.net/problem/2178), [특정 거리의 도시 찾기(18352)](https://www.acmicpc.net/problem/18352), [점프왕 쩰리(Small)(16173)](https://www.acmicpc.net/problem/16173) | 골드 5 - 실버 4 |               | 전인서      |
-|       |                  | SQL        |                                                    |                                                              |                 |               |             |
-| 8주차 | 22.09.26(월)     | Python     |                                                    |                                                              |                 |               | 조숙현      |
-|       |                  | SQL        |                                                    |                                                              |                 |               |             |
+|       |                  | ~~SQL~~    |                                                    |                                                              |                 |               |             |
+| 8주차 | 22.09.26(월)     | Python     |                                                    |                                                              |                 |               | 형한결      |
+|       |                  | SQL        | [HackerRank](https://www.hackerrank.com/dashboard) | 각자 남은 문제들 마무리                                      |                 |               |             |
 | 9주차 | 22.10.03(월)     | Python     |                                                    |                                                              |                 |               |             |
 |       |                  | SQL        |                                                    |                                                              |                 |               |             |
 
