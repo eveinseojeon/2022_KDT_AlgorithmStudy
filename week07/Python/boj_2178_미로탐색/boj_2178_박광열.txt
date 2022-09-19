@@ -1,0 +1,23 @@
+# 미로탐색
+from collections import deque
+map_a=[]
+n, m= map(int, input().split())
+dx,dy = [-1,1,0,0],[0,0,1,-1]
+queue = deque([[0,0]])
+for j in range(n):
+    map_a.append(list(map(int,list(input()))))
+def bfs():
+    while queue:
+        x, y= queue.popleft()
+        for i in range(4):
+            nx, ny= dx[i] + x, dy[i] + y
+            if 0 <= nx < n and 0 <= ny < m and map_a[nx][ny] == 1:
+                map_a[nx][ny] = map_a[x][y] + 1
+                queue.append([nx,ny])
+                if map_a[n-1][m-1]!= 1 :
+                    return
+bfs()
+res = 0
+for i in map_a:
+    res = max(res, max(i))
+print(res)
