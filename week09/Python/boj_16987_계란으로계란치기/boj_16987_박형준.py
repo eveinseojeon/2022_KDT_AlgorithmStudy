@@ -12,7 +12,7 @@ for i in range(N):
 result = 0
 
 
-def dfs(idx, dur_eggs):
+def break_egg(idx, dur_eggs):
     global result
     if idx == N:
         cnt = 0
@@ -30,12 +30,12 @@ def dfs(idx, dur_eggs):
                 tmp = dur_eggs[:]
                 tmp[idx] -= wei_eggs[j]
                 tmp[j] -= wei_eggs[idx]
-                dfs(idx + 1, tmp)
+                break_egg(idx + 1, tmp)
         if not flag:
-            dfs(idx + 1, dur_eggs)
+            break_egg(idx + 1, dur_eggs)
     else:
-        dfs(idx + 1, dur_eggs)
+        break_egg(idx + 1, dur_eggs)
 
 
-dfs(0, dur_eggs)
+break_egg(0, dur_eggs)
 print(result)
