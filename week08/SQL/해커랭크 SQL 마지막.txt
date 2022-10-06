@@ -1,0 +1,113 @@
+1. olivander's inventory
+- is_evil=0 값인 non-evil 지팡이들만 골라야 한다.
+- Age, Power 값이 각각 같은 지팡이들 중에서 coins_needed 값을 최소로 하는 지팡이를 골라야 한다.
+- 2개의 정렬 기준을 만족시켜야 한다.
+- 문제 해석하는게 오래걸렸음, 서브쿼리 문제만 잘 해결하면 풀 수 있다.
+
+```
+SELECT W.id, P.age, W.coins_needed, W.power
+FROM Wands W
+	 INNER JOIN Wands_Property P ON W.code = P.code
+WHERE P.is_evil = 0
+AND W.coins_needed = (SELECT MIN(W1.coins_needed)
+                      FROM Wands W1
+                       INNER JOIN Wands_Property P1 ON W1.code = P1.code
+                      WHERE P1.is_evil = 0 
+                      AND W1.power = W.power
+                      AND P1.age = P.age)
+ORDER BY W.power DESC, P.age DESC
+```
+
+2. placement 
+- best friend가 더 높은 연봉을 받는 학생
+- 친구의 salary를 오름차순 정렬
+- 이너 조인의 연속이 약간 헷갈렸음
+
+```
+select a.name
+from students a
+    inner join friends b on a.id = b.id
+    inner join packages c on a.id = c.id
+    inner join packages d on b.friend_id = d.id 
+where c.salary < d.salary
+order by d.salary
+```
+
+3. Symmetric Pairs
+- Symmetric Pairs는 어떤 함수 F에 대해 F(X1) = Y1, F(X2) = Y2 일 때, X1 = Y2이고 X2 = Y1인 두 항
+- 어려운 문제는 아니었는데 셀프조인의 문제가 떠오르지 않았음 ( 구글링 했음 ) 
+-
+```
+SELECT F1.X, F1.Y
+FROM FUNCTIONS F1, FUNCTIONS F2
+WHERE F1.X = F2.Y
+  AND F1.Y = F2.X
+GROUP BY F1.X, F1.Y
+HAVING COUNT(F1.X) > 1 OR F1.X < F1.Y
+ORDER BY F1.X;
+```
+
+4. SQL project planning
+- discussion 참고...
+- 시작일자와 종료일자는 무조건 1일차이, 종료일자가 다른 시작일자와 같다면 동일한 프로젝트
+- 이 때, 테이블에 저장되어 있는 모든 프로젝트 구하기
+- 프로젝트 기간 오름차순, 기간이 동일하다면 시작일자로 정렬
+
+- 프로젝트는 시작과 끝만 있으면 되기 때문에 중간일자를 제거하는 것이 중요
+- 어려움...
+```
+SELECT Start_Date, MIN(End_Date)
+FROM 
+    (SELECT Start_Date 
+     FROM Projects 
+     WHERE Start_Date NOT IN (SELECT End_Date FROM Projects)) a,
+    (SELECT End_Date
+     FROM Projects
+    WHERE End_Date NOT IN (SELECT Start_Date FROM Projects)) b
+WHERE Start_Date < End_Date
+GROUP BY Start_Date
+ORDER BY DATEDIFF(MIN(End_Date), Start_Date), Start_Date
+```
+
+5. print prime number
+- 아이디어가 안떠오름..
+-https://techblog-history-younghunjo1.tistory.com/173 참조
+- 
+SET @i = 2;
+SET @isPrime = 0;
+SET @result = '';
+
+DELIMITER $$ 
+CREATE PROCEDURE PrintPrime(IN num INT)
+BEGIN 
+    WHILE @i < num DO
+        SET @j = @i - 1;
+        SET @isPrime = 1;    
+        
+        WHILE @j > 1 DO
+            IF @i % @j = 0 THEN 
+                SET @isPrime = 0;
+            END IF;
+            SET @j = @j - 1;
+        END WHILE;
+        
+        IF @isPrime = 1 THEN 
+            SET @result = CONCAT(@result, @i, '&');
+        END IF;                
+        
+        SET @i = @i + 1;   
+    END WHILE ;   
+    
+    SET @result = SUBSTR(@result, 1, LENGTH(@result) - 1);    
+    SELECT @result;    
+END$$ 
+DELIMITER ;
+
+CALL PrintPrime(1000);
+
+6,7 너무 어려움.... 
+
+
+
+
+-
