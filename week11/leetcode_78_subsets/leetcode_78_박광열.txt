@@ -1,0 +1,19 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        res=[]
+        def dfs(res, path):
+            if len(path)<len(nums):
+                res.append(path)
+            if len(path)==len(nums):
+                return
+            else:
+                for c in nums:
+                    if path :
+                        if c >=path[-1] and c not in list(path):
+                            dfs(res, path+[c])
+                    else:
+                        if c not in list(path):
+                            dfs(res, path+[c])
+        dfs(res,[])
+        return res+[nums]                 
+                            

@@ -1,0 +1,19 @@
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        res = []
+        ta=target
+        def dfs(res, path):
+            if sum(path)==ta:
+                res.append(path)
+                return
+            elif sum(path)>ta:
+                return
+            else:
+                for c in candidates:
+                    if path :
+                        if c >=path[-1]:
+                            dfs(res, path+[c])
+                    else:
+                        dfs(res, path+[c])
+        dfs(res,[])
+        return res
