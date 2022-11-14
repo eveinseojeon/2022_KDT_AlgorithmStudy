@@ -20,6 +20,9 @@ class Solution:
                     dp[i] = dp[i-3] + nums[i]
             
             return max(dp)
+        
+        
+my_solution - 
                     
 
                 
